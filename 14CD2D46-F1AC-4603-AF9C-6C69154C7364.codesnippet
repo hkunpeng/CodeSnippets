@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mybutton</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>fileprivate lazy var btnRefresh: UIButton = {
+        let btnRefresh = UIButton()
+        btnRefresh.setImage(UIImage(named: ""), for: .normal)
+        btnRefresh.setImage(UIImage(named: ""), for: .highlighted)
+        btnRefresh.addTarget(self, action: #selector(onRefresh), for: .touchUpInside)
+        return btnRefresh
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>14CD2D46-F1AC-4603-AF9C-6C69154C7364</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mybutton</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mybutton</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

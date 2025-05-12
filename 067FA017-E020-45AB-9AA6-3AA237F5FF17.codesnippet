@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mydate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>  func setupDate(_ dateSent: Date) -&gt; String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone.current
+        formatter.locale = Locale(identifier: EHLanguageManager.localeLanguage ?? "en_US")
+//        formatter.amSymbol = "AM"
+//        formatter.pmSymbol = "PM"
+        var dateString = ""
+        if dateSent.hasSame([.year], as: Date()) == true {
+            formatter.dateFormat = "MM-dd hh:mm a"
+            dateString = formatter.string(from: dateSent)
+        } else {
+            formatter.dateFormat = "YYYY MM-dd hh:mm a"
+            var anotherYearDate = formatter.string(from: dateSent)
+            if (anotherYearDate.hasPrefix("0")) {
+                anotherYearDate.remove(at: anotherYearDate.startIndex)
+            }
+            dateString = anotherYearDate
+        }
+        
+        return dateString
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>067FA017-E020-45AB-9AA6-3AA237F5FF17</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mydate</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mydate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

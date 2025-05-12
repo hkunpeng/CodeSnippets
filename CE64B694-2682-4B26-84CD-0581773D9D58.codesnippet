@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mypaysuccess</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>EHUtility.openPregnancyLandingPage_switchPregenancy()
+    
+        g.performInMain(1) {
+            // 模拟支付成功
+            let inWebVC = UIViewController.currentViewController() as? EHBaseWebViewController
+            
+            // case 15:
+            inWebVC?.isPushingNewFlutterPage = true
+            delay(0.25) {
+                if let vc = inWebVC {
+                    vc.isPushingNewFlutterPage = false
+                }
+            }
+            g.performInMain(){
+                //打开支付成功页面
+                EHUtility.flutterBoost.open("/membership_pay/success", arguments: nil, completion: nil)
+            }
+            
+            // case 3：关闭原生
+            inWebVC?.exit()
+            
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CE64B694-2682-4B26-84CD-0581773D9D58</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>模拟支付成功跳转</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mypaysuccess</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

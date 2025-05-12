@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myRxSerial</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let disposeBag = DisposeBag()
+    func test(){
+        task1(true).flatMap({[unowned self] in self.task2($0)}).debug().subscribe (onNext: {success in
+            print("success:\(success)")
+        }, onError: { error in
+            print("onError:\(error)")
+        }, onCompleted: {
+            print("onCompleted")
+        }).disposed(by: disposeBag)
+    }
+
+
+    func task1(_ pregnancyMode:Bool) -&gt; Observable&lt;[EHDailyLogModel]&gt;{
+        return Observable.create {  observer -&gt; Disposable in
+            EHDataManager.shared.getMySettingList {(success, response, error) in
+                if success,let arr = response as? [EHDailyLogModel] {
+                    observer.onNext(arr)
+                }else{
+                    observer.onError(EHError.init(error: error?.error))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func task2(_ dailyLogModels:[EHDailyLogModel]) -&gt; Observable&lt;Bool&gt;{
+        return Observable.create {  observer -&gt; Disposable in
+            EHHTTPClient.sharedClient.updateUserDailyRecordSetting(items: dailyLogModels) { (success, dailyLogModels, error)  in
+                if success {
+                    observer.onNext(success)
+                }else{
+                    observer.onError(EHError.init(error: error?.error))
+                }
+            }
+            return Disposables.create()
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A5880A40-7676-4B8A-8347-54714584A450</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>任务顺序执行</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myRxSerial  多个任务之间有依赖关系</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

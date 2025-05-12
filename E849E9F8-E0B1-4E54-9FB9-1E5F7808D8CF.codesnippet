@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myinapp</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>if msgLink.contains("inapp"){
+                                //应用到跳转模块
+                                let bannerModel = EHBannerModel()
+                                if let inAppModel = bannerModel.getNativeApp(link: msgLink) {
+                                    EHUtility.goToInApp(inAppModel: inAppModel, currentVC: self)
+                                }
+                                
+                            }else{
+                                //跳转网页
+                                var firstSym = "?"//第一个符号
+                                if msgLink.contains("?"){
+                                    firstSym = "&amp;"
+                                }
+                              
+                                let url = msgLink + firstSym + "locale=" + "\(getCurLanguageNum())" + "&amp;modulePhone=2"
+                                let vc = EHBaseWebViewController()
+                                vc.url = url
+                                vc.title = model.msgTitle
+                                self.navigationController?.pushViewController(vc, animated: true)
+                            }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E849E9F8-E0B1-4E54-9FB9-1E5F7808D8CF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myinapp</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myinapp</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

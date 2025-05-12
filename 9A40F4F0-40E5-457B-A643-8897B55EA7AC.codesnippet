@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mybutton4</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>lazy var btnSectionText: UIButton = {
+    let btn = UIButton()
+    btn.isHidden = true
+    btn.setRoundView(cornerRadius: 20)
+    btn.backgroundColor = "#F5F5F5".color
+    
+    let v = UIView()
+    let tap = UITapGestureRecognizer(target: self, action: #selector(onLogSection))
+    v.addGestureRecognizer(tap)
+    btn.addSubview(v)
+    
+    let imgv = UIImageView()
+    imgv.image = "btn_tick_records_select".image
+    v.addSubview(imgv)
+    
+    let lb = EHUtility.eh_creatLabel(text: "", textAlignment: .left, textColor: "#000000".color, font: UIFont.systemFont(ofSize: 16, weight: .medium))
+    lb.numberOfLines = 0
+    lb.adjustsFontSizeToFitWidth = true
+    lb.tag = 10011
+    v.addSubview(lb)
+    
+    v.snp.makeConstraints { make in
+        make.height.equalTo(btn)
+        make.top.bottom.equalTo(btn)
+        make.center.equalTo(btn)
+        make.leading.greaterThanOrEqualTo(btn)
+        make.trailing.lessThanOrEqualTo(btn)
+    }
+    
+    imgv.snp.makeConstraints { make in
+        make.width.height.equalTo(20)
+        make.leading.equalTo(v)
+        make.centerY.equalTo(v)
+    }
+    
+    lb.setContentHuggingPriority(UILayoutPriority(rawValue: 248), for: .horizontal)
+    lb.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 748), for: .horizontal)
+    lb.snp.makeConstraints { make in
+        make.leading.equalTo(imgv.snp.trailing).offset(12)
+        make.centerY.equalTo(v)
+        make.trailing.equalTo(v)
+    }
+    btn.addTarget(self, action: #selector(onLogSection), for: .touchUpInside)
+    return btn
+}()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9A40F4F0-40E5-457B-A643-8897B55EA7AC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>图左字右</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mybutton4</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

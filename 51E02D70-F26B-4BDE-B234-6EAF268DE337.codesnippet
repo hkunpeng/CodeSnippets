@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myDispatchgroupNotify</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let group = DispatchGroup()
+        let queue1 = DispatchQueue(label: "serialQueue1")
+        let queue2 = DispatchQueue(label: "serialQueue2")
+        let queue3 = DispatchQueue(label: "serialQueue3")
+        queue1.async(group: group) {
+            print("queue1")
+        }
+        queue2.async(group: group) {
+            print("queue2")
+        }
+        queue3.async(group: group) {
+            print("queue3")
+        }
+        group.notify(queue: DispatchQueue.main) {
+            print("notify")
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>51E02D70-F26B-4BDE-B234-6EAF268DE337</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>DispatchGroup-&gt;Notify</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

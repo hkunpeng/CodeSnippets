@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mynewtips</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>lazy var btnNewTips: EHNewTipsBtn = {
+        let temp = EHUtility.createCommonTipsBtn(title: "common_new".localized, btnH: newH)
+        temp.isHidden = true
+        return temp
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0E9C6B59-38DF-4CB9-97E3-6131DE0B8D7D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>New新提示文案</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mynewtips</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

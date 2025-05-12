@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mybutton5</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let btn = EHCustomButton(type: .leftTitleRightImage)
+        let btnH: CGFloat = 36
+        btn.backgroundColor = "#E8EFFF".color
+        btn.setRoundView(cornerRadius: btnH/2)
+        btn.lbTitle = {
+            let lb = EHUtility.eh_creatLabel(text: "Nahrungsergänzungsmittel für Schwangere ahrungser ahrungser", textAlignment: .left, textColor: "#8EAEFF".color, font: UIFont.systemFont(ofSize: 15, weight: .regular))
+            lb.numberOfLines = 0
+            lb.adjustsFontSizeToFitWidth = true
+            lb.lineBreakMode = .byTruncatingTail
+            return lb
+        }()
+        btn.imageWidth = 6
+        btn.imageHeight = 12
+        btn.imageLeft = 8
+        btn.imgvLogo.image = "bbt_arrow_right".image
+        self.view.addSubview(btn)
+        btn.snp.makeConstraints { make in
+            make.center.equalTo(self.view)
+            make.height.equalTo(btnH)
+        }
+        btn.resetLayout()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>95222F86-58E1-4E03-BB09-1E9E7475F11D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>左文字右图片啊</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mybutton5</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

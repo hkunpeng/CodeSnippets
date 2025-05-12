@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mytableview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>fileprivate lazy var tableView: EHTableView = {
+    let temp = EHTableView(frame: .zero, style: .plain)
+    temp.separatorStyle = .none
+    temp.delegate = self
+    temp.dataSource = self
+    temp.estimatedRowHeight = 0;
+    temp.estimatedSectionHeaderHeight = 0
+    temp.estimatedSectionFooterHeight = 0
+    temp.separatorStyle = .none
+    temp.showsVerticalScrollIndicator = false
+    if #available(iOS 11.0, *) {
+        temp.contentInsetAdjustmentBehavior = .never
+    }else{
+        automaticallyAdjustsScrollViewInsets = false
+    }
+    return temp
+}()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B1348F65-D6CB-458C-97C2-0B889F3DE311</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mytableview</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mytableview</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

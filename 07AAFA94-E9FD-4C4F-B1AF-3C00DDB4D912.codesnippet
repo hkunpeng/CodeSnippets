@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mydequeuecell</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let reuseIdentifier = "Cell_\(indexPath.row)" // 为每个cell分配唯一的标识符
+        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
+        
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>07AAFA94-E9FD-4C4F-B1AF-3C00DDB4D912</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>不重用cell</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mydequeuecell</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>setupNav</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    fileprivate func setupNavigationItem() {
+        let naviBackView = UIView(frame: CGRect.zero)
+        naviBackView.backgroundColor = .main
+        view.addSubview(naviBackView)
+        naviBackView.snp.makeConstraints { (make) in
+            make.left.equalTo(0)
+            make.top.equalTo(0)
+            make.right.equalTo(0)
+            make.height.equalTo(kTopHeight)
+        }
+        
+        let titleLbl = UIButton(type: UIButtonType.custom)
+        titleLbl.setTitle("QRCode Page", for: UIControlState.normal)
+        titleLbl.titleLabel?.font = .titleFont
+        naviBackView.addSubview(titleLbl)
+        titleLbl.snp.makeConstraints { (make) in
+            make.centerX.equalTo(view)
+            make.width.equalTo(180)
+            make.bottom.equalTo(0)
+            make.height.equalTo(kNavBarHeight)
+        }
+        
+        let leftItem = UIButton(type: .custom)
+        leftItem.setImage(#imageLiteral(resourceName: "btn_back_default_top"), for: .normal)
+        leftItem.addTarget(self, action: #selector(back), for: .touchUpInside)
+        naviBackView.addSubview(leftItem)
+        leftItem.snp.makeConstraints { (make) in
+            make.left.equalTo(13)
+            make.bottom.equalTo(0)
+            make.height.equalTo(kNavBarHeight)
+        }
+    }
+    
+    @objc
+    fileprivate func back() {
+        navigationController?.popViewController(animated: true)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E431F580-20E5-405F-85DC-E0D1D2B40383</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>navigationItemSetting</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

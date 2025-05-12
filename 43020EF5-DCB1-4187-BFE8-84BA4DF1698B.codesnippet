@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myenum</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>public enum CacheType {
+        case none, memory, disk
+        
+        public var cached: Bool {
+            switch self {
+            case .memory, .disk: return true
+            case .none: return false
+            }
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>43020EF5-DCB1-4187-BFE8-84BA4DF1698B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myEnum</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myEnum 枚举</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myscrolltorow</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let indexPath = IndexPath(row: 0, section: 1)
+    tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+
+    // 如果需要精确滚动到顶部
+    DispatchQueue.main.async {
+        let offsetY = self.tableView.rectForRow(at: indexPath).origin.y
+        self.tableView.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>13CA21BA-8888-467B-873F-624466CEDA67</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>滚动到顶部</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myscrolltorow</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

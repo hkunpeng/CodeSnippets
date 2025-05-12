@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myattri3</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>private func _getContent(_ content: String) -&gt; (NSMutableAttributedString, [String]) {
+        let checkContentStr = content
+
+        let markString: LocalizedMarkString = checkContentStr.localizedMark(.default)
+        let font = UIFont.mediumFont(ofSize: chartMessageFont.adaption)
+        let markAttributedString = NSMutableAttributedString.createString(text: markString.value, textColor: "#383838".color, font: font, alignment: .center)
+
+        let markAttributed: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.foregroundColor: "#9E3CF8".color,
+            NSAttributedString.Key.font: font
+        ]
+        
+        var highlightStrs = [String]()
+        let count = markString.ranges.count
+        if count &gt; 0 {
+            for i in 0..&lt;count where i &lt; markString.highlights.count {
+                let range = markString.ranges[i]
+                let str = markString.highlights[i]
+                highlightStrs.append(str)
+                markAttributedString.addAttributes(markAttributed, range: range)
+            }
+        }
+       return (markAttributedString, highlightStrs)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5C139C36-8541-45A6-A708-6A98D0D39AD1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myattri3</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myattri3</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

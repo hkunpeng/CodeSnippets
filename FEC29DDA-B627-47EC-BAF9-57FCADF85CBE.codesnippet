@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mykingfisher</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>public final class Kingfisher&lt;Base&gt; {
+    public let base: Base
+    public init(_ base: Base) {
+        self.base = base
+    }
+}
+
+public protocol KingfisherCompatible {
+    associatedtype CompatibleType
+    var kf: CompatibleType { get }
+}
+
+public extension KingfisherCompatible {
+    var kf: Kingfisher&lt;Self&gt; {
+        return Kingfisher(self)
+    }
+}
+
+extension String: KingfisherCompatible { }
+
+extension Kingfisher where Base == String {
+    public var md5: String {
+        return ""
+    }
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FEC29DDA-B627-47EC-BAF9-57FCADF85CBE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mykingfisher</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>创建.kf. 链式调用</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

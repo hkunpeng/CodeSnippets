@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myrxflatmap</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    let disposeBag = DisposeBag()
+    func test(){
+        let task1 = task1(true)
+        task1.flatMap ({ arg0 -&gt; Observable&lt;EHResponse&gt; in
+            if arg0.success ,let obj = arg0.response as? [EHDailyLogModel] {
+                return self.task2(obj)
+            }
+            return Observable&lt;EHResponse&gt;.error()
+        }).subscribe (onNext: { response in
+            print("onNext:\(response)")
+        },onError: { e in
+            print("onError:\(e)")
+        }).disposed(by: disposeBag)
+    }
+   
+    
+    func task1(_ pregnancyMode:Bool) -&gt; Observable&lt;EHResponse&gt;{
+        return Observable.create {  observer -&gt; Disposable in
+            EHDataManager.shared.getMySettingList {(success, response, error) in
+                if success,let arr = response as? [EHDailyLogModel] {
+                    observer.onNext(EHResponse.init(success: true, response: arr, error: error))
+                }else{
+                    observer.onError(EHError.init(error: error?.error))
+                }
+            }
+            return Disposables.create()
+        }
+        
+    }
+    
+    func task2(_ dailyLogModels:[EHDailyLogModel]) -&gt; Observable&lt;EHResponse&gt;{
+        return Observable.create {  observer -&gt; Disposable in
+            EHHTTPClient.sharedClient.updateUserDailyRecordSetting(items: dailyLogModels) { (success, dailyLogModels, error)  in
+                if success {
+                    observer.onNext(EHResponse.init(success: true, response: nil, error: error))
+                }else{
+                    observer.onError(EHError.init(error: error?.error))
+                }
+            }
+            return Disposables.create()
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>5EFE56BB-65A8-49DB-97DC-BC76E1AF84A3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>避免嵌套回调</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Rxswift flatmap任务顺序执行</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

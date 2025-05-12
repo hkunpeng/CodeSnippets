@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myattri4</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>lazy var btnOtherLoginMethod: UILabel = {
+            let temp = UILabel()
+            temp.clickEdgeInsets = UIEdgeInsets.init(top: 15, left: 10, bottom: 10, right: 15)
+            var str = "login_regist_other_login_methods".localized + "&gt;"
+            var tempAttr = NSMutableAttributedString.createString(text: str, textColor: "#BDBDBD".color, font: .systemFont(ofSize: 14, weight: .medium), alignment: .center, highLightString: "", highLightAttr: [:], lineSpacing: 4.0, lineBreakMode: .byWordWrapping)
+            tempAttr.addUnderlineAttribute(range: NSRange(location: 0, length: str.count))
+            temp.attributedText = tempAttr
+            
+            let tap = UITapGestureRecognizer(target: self, action: #selector(otherLogin))
+            temp.addGestureRecognizer(tap)
+            temp.isUserInteractionEnabled = true
+            temp.tag = 666
+            return temp
+        }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3159A697-2580-4B71-BE08-7D35D3C7D908</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>下划线</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myattri4</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

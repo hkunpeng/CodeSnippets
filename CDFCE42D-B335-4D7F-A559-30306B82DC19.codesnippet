@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mybuttonLazy</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>private lazy var btn: UIButton = {
+        let temp = UIButton()
+        temp.isUserInteractionEnabled = true
+        temp.setTitleColor("#FFFFFF".color, for: .highlighted)
+        temp.setTitleColor("#9E3CF8".color, for: .normal)
+        temp.setBackgroundColor(color: "#FFFFFF".color, forState: .normal)
+        temp.setBackgroundColor(color: "#9E3CF8".color, forState: .highlighted)
+        temp.backgroundColor = "#FFFFFF".color
+        temp.setRoundView(cornerRadius: 12)
+        temp.titleLabel?.numberOfLines = 0
+        temp.titleLabel?.textAlignment = .center
+        temp.titleLabel?.font = .systemFont(ofSize: 12)
+        temp.titleLabel?.adjustsFontSizeToFitWidth = true
+        temp.titleLabel?.lineBreakMode = .byTruncatingTail
+        temp.setTitle("动态文本a 动态文本b 动态文本c 动态文本d end", for: .normal)
+        temp.setTitle("动态文本b 动态文本c 动态文本d 动态文本e end", for: .highlighted)
+        temp.addTarget(self, action: #selector(onButton), for: .touchUpInside)
+        temp.titleLabel?.snp.makeConstraints({ make in
+            make.edges.equalTo(temp).inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+        })
+        return temp
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CDFCE42D-B335-4D7F-A559-30306B82DC19</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mybuttonLazy</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mybuttonLazy</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

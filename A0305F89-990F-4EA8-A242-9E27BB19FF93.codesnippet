@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mymvvm</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>struct Person {
+    let firstName:String
+    let lastName:String
+}
+
+protocol GreetingViewModelProtocol:AnyObject{
+    var greeting:String?{get}
+    var greetingDidChange:((GreetingViewModelProtocol)-&gt;Void)?{get set}
+    init(person:Person)
+    func showGreeting()
+}
+
+
+class GreetingViewModel:GreetingViewModelProtocol{
+    let person:Person
+    var greeting: String?{
+        didSet{
+            self.greetingDidChange?(self)
+        }
+    }
+    
+    var greetingDidChange: ((GreetingViewModelProtocol) -&gt; Void)?
+    
+    required init(person: Person) {
+        self.person = person
+    }
+    
+    func showGreeting() {
+        self.greeting = "Hello" + " " + self.person.firstName + " " + self.person.lastName
+    }
+    
+}
+
+
+class MVVM_VC:UIViewController{
+    
+    var showGreetingButton = UIButton()
+    var greetingLabel = UILabel()
+    
+    var viewModel: GreetingViewModelProtocol?{
+        didSet{
+            self.viewModel?.greetingDidChange = { [weak self] m in
+                guard let weakSelf = self else { return }
+                weakSelf.greetingLabel.text = m.greeting
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = .white
+        let btn = UIButton()
+        btn.frame = CGRect.init(x: 10, y: 100, width: 50, height: 50)
+        btn.backgroundColor = .red
+        btn.addTarget(self, action: #selector(didTapButton(button:)), for: .touchUpInside)
+        self.view.addSubview(btn)
+        showGreetingButton = btn
+        
+        let lb = UILabel()
+        lb.backgroundColor = .yellow
+        lb.frame = CGRect.init(x: 10, y: 200, width: 150, height: 50)
+        self.view.addSubview(lb)
+        greetingLabel = lb
+    }
+    
+    @objc func didTapButton(button:UIButton){
+        self.viewModel?.showGreeting()
+    }
+   
+    
+}
+
+
+let model = Person.init(firstName: "MVVM", lastName: "Demo")
+let view = MVVM_VC()
+let vm = GreetingViewModel(person: model)
+view.viewModel = vm
+self.navigationController?.pushViewController(view, animated: true)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A0305F89-990F-4EA8-A242-9E27BB19FF93</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mymvvm</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

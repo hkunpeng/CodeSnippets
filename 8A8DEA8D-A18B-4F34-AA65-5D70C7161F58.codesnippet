@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myassociate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>struct AssociatedKeys {
+        static var noNetViewKey = UnsafeRawPointer.init(bitPattern: "clickEdgeInsets".hashValue)
+    }
+        
+    var customProperty: String? {
+        get {
+            return objc_getAssociatedObject(self, &amp;AssociatedKeys.noNetViewKey) as? String
+        }
+        set {
+            objc_setAssociatedObject(self, &amp;AssociatedKeys.noNetViewKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8A8DEA8D-A18B-4F34-AA65-5D70C7161F58</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>runtime扩展属性</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myassociate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

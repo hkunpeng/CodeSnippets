@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mystackview</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>private lazy var stackView: UIStackView = {
+        let temp = UIStackView(arrangedSubviews: [self.topLabel, self.bottomLabel])
+        self.topLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+        }
+        self.bottomLabel.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+        }
+    temp.axis = .vertical
+    temp.spacing = 10
+    temp.alignment = .leading
+    temp.distribution = .fill
+        return temp
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D7ABF86C-60E9-409E-AE85-CD377E2C7FC6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mystackview</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

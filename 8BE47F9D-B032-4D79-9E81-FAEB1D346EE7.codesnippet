@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myoutsideapp</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>if let m = self.model, let link = m.link, !link.isEmpty {
+            var isOutsideApp:Bool = false
+            if m.linkType?.isOutsideApp == true {
+                isOutsideApp = true
+            }
+            EHUtility.openUrl(link, isOutsideApp: isOutsideApp)
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8BE47F9D-B032-4D79-9E81-FAEB1D346EE7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myoutsideapp</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myoutsideapp</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

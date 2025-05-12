@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myRxConcurrent</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let disposeBag = DisposeBag()
+    func test(){
+        Observable.zip(task1(true), task2([])).subscribe (onNext: {(array,success) in
+            print("array:\(array),success:\(success)")
+        }, onError: { error in
+            print("onError:\(error)")
+        }, onCompleted: {
+            print("onCompleted")
+        }).disposed(by: disposeBag)
+
+    }
+
+    func task1(_ pregnancyMode:Bool) -&gt; Observable&lt;[EHDailyLogModel]&gt;{
+        return Observable.create {  observer -&gt; Disposable in
+            EHDataManager.shared.getMySettingList {(success, response, error) in
+                if success,let arr = response as? [EHDailyLogModel] {
+                    observer.onNext(arr)
+                }else{
+                    observer.onError(EHError.init(error: error?.error))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func task2(_ dailyLogModels:[EHDailyLogModel]) -&gt; Observable&lt;Bool&gt;{
+        return Observable.create {  observer -&gt; Disposable in
+            EHHTTPClient.sharedClient.updateUserDailyRecordSetting(items: dailyLogModels) { (success, dailyLogModels, error)  in
+                if success {
+                    observer.onNext(success)
+                }else{
+                    observer.onError(EHError.init(error: error?.error))
+                }
+            }
+            return Disposables.create()
+        }
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D4C0D96C-B6E4-42D4-B922-15D8CF5FC33B</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>zip</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myRx多任务合并一个</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

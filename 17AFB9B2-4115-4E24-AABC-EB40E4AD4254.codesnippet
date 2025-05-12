@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myBeziAnimation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let path =  CGMutablePath()
+        path.move(to:startPoint)
+        path.addQuadCurve(to: endPoint, control: controlPoint)
+        
+        //获取贝塞尔曲线的路径
+        let animationPath = CAKeyframeAnimation.init(keyPath: "position")
+        animationPath.path = path
+//        animationPath.rotationMode = CAAnimationRotationMode.rotateAuto
+        
+        //缩小图片到0
+        let scale:CABasicAnimation = CABasicAnimation()
+        scale.keyPath = "transform.scale"
+        scale.toValue = 1
+        
+        //组合动画
+        let animationGroup:CAAnimationGroup = CAAnimationGroup()
+        animationGroup.animations = [animationPath,scale]
+        animationGroup.duration = 2
+        animationGroup.delegate = self
+        animationGroup.fillMode = CAMediaTimingFillMode.forwards
+        animationGroup.isRemovedOnCompletion = false
+        square.layer.add(animationGroup, forKey:nil)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>17AFB9B2-4115-4E24-AABC-EB40E4AD4254</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>贝塞尔曲线动画</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myBeziAnimation -》贝塞尔曲线动画</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

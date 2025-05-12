@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mybutton1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let btn = UIButton()
+        btn.backgroundColor = .green
+        self.view.addSubview(btn)
+        btn.isUserInteractionEnabled = true
+        btn.setRoundView(cornerRadius: 12)
+        btn.titleLabel?.numberOfLines = 0
+        btn.titleLabel?.lineBreakMode = .byTruncatingTail
+        btn.setTitle("动态文本a 动态文本b 动态文本c 动态文本d end", for: .normal)
+        btn.setTitle("动态文本b 动态文本c 动态文本d 动态文本e 动态文本b 动态文本c 动态文本d 动态文本e end", for: .highlighted)
+        btn.titleLabel?.snp.makeConstraints({ make in
+            make.edges.equalTo(btn).inset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        })
+        btn.snp.makeConstraints { make in
+            make.center.equalTo(self.view)
+            make.width.equalTo(150)
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8F43E1A7-C3EB-431C-8430-8A385E6C37B1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mybutton1</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mybutton1</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>my装饰者模式</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>protocol Component {
+    var cost: Int { get }
+}
+
+protocol Decorator: Component {
+    var component: Component { get }
+    init(_ component: Component)
+}
+
+struct Coffee: Component {
+    var cost: Int
+}
+
+struct Sugar: Decorator {
+    var component: Component
+    
+    init(_ component: Component) {
+        self.component = component
+    }
+    
+    var cost: Int {
+        return component.cost + 1
+    }
+}
+
+struct Milk : Decorator {
+    var component: Component
+    
+    init(_ component: Component) {
+        self.component = component
+    }
+    
+    var cost: Int {
+        return component.cost + 2
+    }
+}
+
+print(Milk(Sugar(Coffee(cost: 19))).cost)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>366CC60D-E90F-465E-98D6-5AFC6F0484AC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>装饰者模式</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

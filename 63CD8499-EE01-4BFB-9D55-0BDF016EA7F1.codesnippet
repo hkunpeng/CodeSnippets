@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mycharts</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> let leftAxisMaxWidth:CGFloat = 60
+        var values = [Double]()
+        for i in 0...30 {
+            values.append(Double(i))
+        }
+        var entries: [ChartDataEntry] = Array()
+        var xValues: [String] = Array()
+        let gridWidth:CGFloat = 20
+        let xAxisCount:Int = Int((self.view.frame.size.width - leftAxisMaxWidth - 150)/gridWidth)
+        for (i, value) in values.enumerated()
+        {
+            entries.append(BarChartDataEntry.init(value: value, xIndex: i))
+            xValues.append("\(i)")
+        }
+        
+        
+        
+        
+        ///dataSet
+        dataSet = BarChartDataSet(yVals: entries, label: "Bar chart unit test data")
+        ///圆柱颜色
+        dataSet.setColor(.red)
+        ///高亮显示
+        dataSet.highlightEnabled = true
+        ///高亮显示颜色
+        dataSet.highlightColor = .yellow
+        ///高亮颜色透明度
+        dataSet.highlightAlpha = 0.6
+        
+        //圆柱边宽。默认0.0(不设置)
+//        dataSet.barBorderWidth = 3
+        //圆柱边色。默认black(不设置)
+//        dataSet.barBorderColor = .blue
+        //圆柱阴影色。(不设置)
+//        dataSet.barShadowColor = .green
+        
+        
+        
+        chartView = BarChartView()
+        
+        ///是否显示图例说明
+        chartView.legend.enabled = true
+        ///描述文字
+        chartView.descriptionText = "描述文字"
+        ///数值显示是否在条柱上面
+        chartView.drawValueAboveBarEnabled = false
+        ///是否绘制阴影背景
+        chartView.drawBarShadowEnabled = false
+        ///是否可以拖拽
+        chartView.dragEnabled = true
+        ///是否在bar上显示数值
+        chartView.drawValueAboveBarEnabled = true
+        chartView.doubleTapToZoomEnabled = false
+        chartView.dragDecelerationEnabled = false
+        
+
+        ///x轴
+        let xAxis: ChartXAxis = chartView.xAxis
+        ///x轴坐标文本在charts底部靠外，bottomInside：底部靠内
+        xAxis.labelPosition = .bottom
+        ///开启抗锯齿
+        xAxis.gridAntialiasEnabled = true
+        ///绘制x轴的标签。默认true
+        xAxis.drawLabelsEnabled = true
+        ///标签文字大小。默认10
+        xAxis.labelFont = .systemFont(ofSize: 10)
+        ///显示x轴的轴线。默认true
+        xAxis.drawAxisLineEnabled = true
+        ///轴线的颜色。默认gray
+        xAxis.axisLineColor = NSUIColor.gray
+        ///轴线的宽度。默认0.5
+        xAxis.axisLineWidth = 0.5
+        ///是否绘制x轴网格线
+        xAxis.drawGridLinesEnabled = true
+        ///网格线的颜色
+        xAxis.gridColor = NSUIColor.gray.withAlphaComponent(0.9)
+        ///网格线的宽度。默认0.5(不设置)
+//        xAxis.gridLineWidth = 0.5
+//        xAxis.gridLineDashPhase = 0.0
+//        ///网格线的虚线效果，间距值(不设置)
+//        xAxis.gridLineDashLengths = [0]
+        
+        ///x轴标签文字换行。默认false
+        xAxis.wordWrapEnabled = true
+        xAxis.xLabelsCount = xAxisCount
+        //左Y轴
+        let leftAxis: ChartYAxis = chartView.leftAxis
+        ///是否显示左Y轴
+        leftAxis.enabled = true
+        ///左Y轴最小值
+        leftAxis.axisMinValue = 0
+        ///设置左Y轴的最大值(不设置)
+//        leftAxis.axisMaxValue = 100
+        ///是否将左Y轴进行上下翻转
+        leftAxis.inverted = false
+        ///左Y轴线宽
+        leftAxis.axisLineWidth = 0.5
+        ///是否只显示最大值和最小值
+        leftAxis.showOnlyMinMaxEnabled = false
+        ///force设置为true,tLabelCount才可以指定Y轴的数量(不设置)
+        leftAxis.setLabelCount(values.count, force: false)
+        ///左Y轴最大值到顶部的范围比
+        leftAxis.spaceTop = 0
+        ///左Y轴轴最小宽度
+        leftAxis.minWidth = leftAxisMaxWidth
+        ///左Y轴轴最大宽度
+        leftAxis.maxWidth = leftAxisMaxWidth
+        
+        
+        //右Y轴
+        let rightAxis: ChartYAxis = chartView.rightAxis
+        ///是否显示右Y轴
+        rightAxis.enabled = false
+        ///右Y轴最小值
+        rightAxis.axisMinValue = values[0]
+        
+        
+        let barChartData = BarChartData(xVals: xValues, dataSet: dataSet)
+        chartView.data = barChartData
+        //显示柱状图顶部文字。默认true
+        barChartData.setDrawValues(true)
+        barChartData.setValueFont(.systemFont(ofSize: 10))
+        barChartData.setValueTextColor(.brown)
+        
+        
+        self.view.addSubview(chartView)
+        chartView.snp.makeConstraints { make in
+            make.leading.top.trailing.equalTo(self.view)
+            make.height.equalTo(300)
+        }
+        // Sample data
+        
+        
+        
+        ///x轴显示数量 (需要在设置完 barChartView.data 后设置 setVisibleXRangeMaximum)
+        chartView.setVisibleXRangeMaximum(CGFloat(xAxisCount))</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>63CD8499-EE01-4BFB-9D55-0BDF016EA7F1</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mycharts-柱状图</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mycharts-柱状图</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

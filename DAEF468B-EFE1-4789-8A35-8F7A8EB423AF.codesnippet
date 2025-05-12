@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mychooseinputtextfiled1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>fileprivate lazy var viewInputName: EHChooseOrInputView = {
+        let temp = EHChooseOrInputView()
+        let text = "&lt;mark&gt;*&lt;/mark&gt; \("common_name".localized)"
+        let attr = EHUtility.create(text: text, textColor: "#BDBDBD".color, font: .systemFont(ofSize: 14, weight: .medium), alignment: .left) { index, str in
+            return [NSAttributedString.Key.foregroundColor: "#FF5353".color,
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0, weight: .medium)] as [NSAttributedString.Key : Any]
+        }
+        temp.lbTitle.attributedText = attr
+        temp.textField.placeholder = "common_medication_name".localized
+        temp.textFieldWidth = self.textFieldWidth
+        temp.textField.returnKeyType = .done //done结束键盘
+        temp.textField.delegate = self
+        temp.textField.clearButtonMode = .whileEditing //输入框显示清除按钮
+        temp.textField.rightViewMode = .never //隐藏右视图
+        return temp
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DAEF468B-EFE1-4789-8A35-8F7A8EB423AF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>键盘输入控件上方有标题</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mychooseinputtextfiled1</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

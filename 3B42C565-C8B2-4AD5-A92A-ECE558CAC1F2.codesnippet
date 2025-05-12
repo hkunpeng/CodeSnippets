@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mycorner</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>self.extCorner(corners: [.topLeft, .topRight], roundedRect: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: EHPopupAlertConst.topH), radii: show ? EHPopupAlertConst.raidus : 0)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3B42C565-C8B2-4AD5-A92A-ECE558CAC1F2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mycorner</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mycorner</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

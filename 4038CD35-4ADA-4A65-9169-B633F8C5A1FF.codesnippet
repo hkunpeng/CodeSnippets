@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>bottomline</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>        let bottomLine = UIView()
+        bottomLine.backgroundColor = rgba(231, 223, 233, 1)
+        contentView.addSubview(bottomLine)
+        bottomLine.snp.makeConstraints { (make) in
+            make.bottom.equalTo(contentView).offset(-1)
+            make.right.equalTo(-20)
+            make.height.equalTo(1)
+            make.left.equalTo(leftLabel.snp_left)
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4038CD35-4ADA-4A65-9169-B633F8C5A1FF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>bottomLine</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

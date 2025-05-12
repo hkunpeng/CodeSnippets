@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mybutton6</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>fileprivate lazy var btnReminder: EHCustomButton = {
+        let btn = EHCustomButton(type: .topImageBottomTitle)
+        btn.backgroundColor = "#F9F5FF".color
+        btn.setRoundView(cornerRadius: 8)
+        btn.lbTitle = {
+            let lb = EHUtility.eh_creatLabel(text: "common_set_reminders".localized, textAlignment: .center, textColor: "#A392B3".color, font: UIFont.systemFont(ofSize: 12, weight: .regular))
+            lb.numberOfLines = 2
+            lb.adjustsFontSizeToFitWidth = true
+            lb.lineBreakMode = .byTruncatingTail
+            return lb
+        }()
+        btn.imageWidth = 40
+        btn.imageHeight = 40
+        btn.imageTop = 12
+        btn.titleTop = 12
+        btn.titleBottom = 12
+        btn.fixHeight = btnH
+        btn.imgvLogo.image = "ComponentReminder".image
+        btn.addTarget(self, action: #selector(onReminder), for: .touchUpInside)
+        return btn
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>FCAF9189-BC8A-4D23-BA6E-8EF74D51C9DC</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>上图下文</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mybutton6</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

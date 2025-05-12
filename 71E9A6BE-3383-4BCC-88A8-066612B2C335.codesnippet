@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>MyDispatchGroup1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let group = DispatchGroup()
+        let queue = DispatchQueue(label: "test.queue")
+
+        group.enter()
+        queue.async {
+            print("操作 1")
+            group.leave()
+        }
+
+        group.enter()
+        queue.async {
+            print("操作 2")
+            group.leave()
+        }
+
+        print("操作1 操作2 安排完成")
+
+        group.notify(queue: queue) {
+            print("操作1 操作2 全部执行完毕")
+        }
+        print("非阻塞")</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>71E9A6BE-3383-4BCC-88A8-066612B2C335</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>非阻塞</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>MyDispatchGroup-非阻塞</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

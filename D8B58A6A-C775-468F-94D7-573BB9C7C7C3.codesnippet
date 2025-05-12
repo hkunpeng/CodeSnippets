@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 设置填充颜色
+        context.saveGState()
+        context.setFillColor("#F5F5F5".color.cgColor)
+        
+        // 定义矩形的边框和圆角半径
+        let cornerRadius: CGFloat = model.c_height/2
+        let roundedRect = CGRect.init(origin: .zero, size: size)
+        
+        // 创建圆角矩形路径
+        let path = UIBezierPath(roundedRect: roundedRect, cornerRadius: cornerRadius)
+        
+        // 将路径添加到上下文
+        context.addPath(path.cgPath)
+        
+        // 绘制路径
+        context.fillPath()
+        context.restoreGState()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D8B58A6A-C775-468F-94D7-573BB9C7C7C3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My Code Snippet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

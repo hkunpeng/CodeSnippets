@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>button</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    lazy var closeBtn: UIButton = {
+        let result = UIButton(type: .custom)
+        result.setImage(#imageLiteral(resourceName: "btn_close_daily_logs_option"), for: .normal)
+        topView.addSubview(result)
+        result.snp.makeConstraints { (make) in
+            make.left.equalTo(13)
+            make.lastBaseline.equalTo(titleLbl.snp.firstBaseline)
+        }
+        return result
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>11FDF09E-5C30-46F6-85B9-2FF331B65894</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>button</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

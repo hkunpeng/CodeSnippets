@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myArrow</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>override func draw(_ rect: CGRect) {
+        
+        ///箭头宽度
+        let arrowWidth:CGFloat = 12
+        ///箭头高度
+        let arrowHeight:CGFloat = 10
+        ///背景圆角
+        let borderRadius:CGFloat = 13.0
+        ///背景颜色
+        let bgColor:UIColor = UIColor.black.withAlphaComponent(0.75)
+        ///箭头x坐标
+        let arrowX:CGFloat = 30
+        ///箭头朝上
+        let arrowIsUp:Bool = false
+        
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+        context.beginPath()
+        
+        arrowIsUp ? drawArrowTop() : drawArrowBottom()
+        
+        func drawArrowBottom(){
+            let fullHeight:CGFloat = rect.height - arrowHeight
+            context.move(to: CGPoint(x: borderRadius, y: 0.0))
+            /// 左上角
+            context.addArc(center: CGPoint(x: borderRadius, y: borderRadius), radius: borderRadius, startAngle: -Double.pi / 2, endAngle: Double.pi, clockwise: true)
+            /// 左下角
+            context.addArc(center: CGPoint(x: borderRadius, y: fullHeight - borderRadius), radius: borderRadius, startAngle: Double.pi, endAngle: Double.pi / 2, clockwise: true)
+            /// 三角
+            context.addLine(to: CGPoint(x: arrowX - arrowWidth/2, y: fullHeight))
+            context.addLine(to: CGPoint(x: arrowX, y: rect.height))
+            context.addLine(to: CGPoint(x: arrowX + arrowWidth/2, y: fullHeight))
+            /// 右下角
+            context.addArc(center: CGPoint(x: rect.width - borderRadius, y: fullHeight - borderRadius), radius: borderRadius, startAngle: Double.pi / 2, endAngle: 0.0, clockwise: true)
+            /// 右上角
+            context.addArc(center: CGPoint(x: rect.maxX - borderRadius, y: borderRadius), radius: borderRadius, startAngle: 0.0, endAngle: -Double.pi / 2, clockwise: true)
+            context.closePath()
+            context.setFillColor(bgColor.cgColor)
+            context.fillPath()
+        }
+        
+        func drawArrowTop(){
+            
+            let fullHeight:CGFloat = rect.height
+            
+            context.move(to: CGPoint(x: borderRadius, y: arrowHeight))
+            /// 左上角
+            context.addArc(center: CGPoint(x: borderRadius, y: borderRadius+arrowHeight), radius: borderRadius, startAngle: -Double.pi / 2, endAngle: Double.pi, clockwise: true)
+            /// 左下角
+            context.addArc(center: CGPoint(x: borderRadius, y: fullHeight - borderRadius), radius: borderRadius, startAngle: Double.pi, endAngle: Double.pi / 2, clockwise: true)
+           
+            /// 右下角
+            context.addArc(center: CGPoint(x: rect.width - borderRadius, y: fullHeight - borderRadius), radius: borderRadius, startAngle: Double.pi / 2, endAngle: 0.0, clockwise: true)
+            /// 右上角
+            context.addArc(center: CGPoint(x: rect.maxX - borderRadius, y: borderRadius+arrowHeight), radius: borderRadius, startAngle: 0.0, endAngle: -Double.pi / 2, clockwise: true)
+           
+            /// 三角
+            context.addLine(to: CGPoint(x: arrowX + arrowWidth/2, y: arrowHeight))
+            context.addLine(to: CGPoint(x: arrowX, y: 0))
+            context.addLine(to: CGPoint(x: arrowX - arrowWidth/2, y: arrowHeight))
+            
+            context.closePath()
+            context.setFillColor(bgColor.cgColor)
+            context.fillPath()
+            
+        }
+        
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>26B015AA-A69C-44D8-BBED-38836B0971AF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>创建箭头</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myArrow</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

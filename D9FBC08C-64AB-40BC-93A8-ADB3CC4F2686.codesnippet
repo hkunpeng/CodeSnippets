@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mynavigationbar2</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let v = EHNavigationBar(title: "Title1", backImage: "nav_ic_back_black".image!) {
+            print("点击返回")
+        }
+        self.view.addSubview(v)
+        v.snp.makeConstraints { make in
+            make.leading.top.trailing.equalTo(0)
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D9FBC08C-64AB-40BC-93A8-ADB3CC4F2686</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mynavigationbar2</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mynavigationbar2</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

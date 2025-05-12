@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myrandom1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>func randomIntNumber(lower: Int = 0,upper: Int = Int(UInt32.max)) -&gt; Int {
+            return lower + Int(arc4random_uniform(UInt32(upper - lower)))
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3D3C189A-56EB-43B6-AE28-FA69B2921A3C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>随机数</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myrandom1</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

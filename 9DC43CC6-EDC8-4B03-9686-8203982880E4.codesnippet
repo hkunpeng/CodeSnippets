@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mylayoutconstraint</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSLayoutConstraint.activate([view1.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 10),
+                                     view1.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+                                     view1.widthAnchor.constraint(equalToConstant: 100),
+                                     view1.heightAnchor.constraint(equalToConstant: 200),
+                                    ])</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9DC43CC6-EDC8-4B03-9686-8203982880E4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>NSLayoutConstraint布局约束</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mylayoutconstraint</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

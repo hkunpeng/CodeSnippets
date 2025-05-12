@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mytttatri</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> @objc func handleTapGesture(_ tap: UITapGestureRecognizer?) {
+    
+    let touchPt: CGPoint? = tap?.location(in: self)
+    let touchView: UIView? = tap?.view?.hitTest(touchPt ?? CGPoint.zero, with: nil)
+    
+    if (touchView is TTTAttributedLabel) {
+      
+      let label = touchView as? TTTAttributedLabel
+      let translatedPoint = label?.convert(touchPt ?? CGPoint.zero, from: tap?.view)
+      
+      let labelLink: TTTAttributedLabelLink? = label?.link(at: translatedPoint!)
+      
+      if (labelLink?.result.numberOfRanges ?? 0) &gt; 0 {
+        
+        if let _ = delegate?.chatCell!(self, didTapOn: (labelLink?.result)!) {
+          delegate?.chatCell!(self, didTapOn: (labelLink?.result)!)
+        }
+        return
+      }
+    }
+    if containerView == nil {
+        return
+    }
+    
+    if containerView.frame.contains(touchPt!) {
+        delegate?.chatCellDidTapContainer(self)
+    } else if let _ = delegate?.chatCell!(self, didTapAtPosition: touchPt!) {
+
+      delegate?.chatCell!(self, didTapAtPosition: touchPt!)
+    }
+  }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>28539B6E-4F79-46FD-9AB9-E6DD1F028906</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mytttatri</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mytttatri</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

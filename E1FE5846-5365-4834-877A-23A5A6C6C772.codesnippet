@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mywebviewurl</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>var firstSym = "?"//第一个符号
+            if let aLink = link,aLink.contains("?"){
+                firstSym = "&amp;"
+            }
+            let aLink = link == nil ? "" : link!
+            let url = aLink + firstSym + "locale=" + "\(getCurLanguageNum())" + "&amp;modulePhone=2"</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E1FE5846-5365-4834-877A-23A5A6C6C772</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mywebviewurl</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mywebviewurl</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

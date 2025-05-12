@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mykf2</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>browserCell?.imageView.kf.indicatorType = .activity
+                if let url = URL(string: m){
+                    browserCell?.imageView.setImageWith(url, placeholderImage: UIImage(named: "defaultPhoto"))
+                }else{
+                    browserCell?.imageView.image = UIImage(named: "defaultPhoto")
+                }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>58170EB6-DBF8-4DAC-8250-AF1495790FF6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mykf2</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mykf2</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

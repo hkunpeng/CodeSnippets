@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myanimation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>func addAnimation(to view: UIView) {
+        // 创建从右到左滚动的动画
+        let animation = CABasicAnimation(keyPath: "position.x")
+        animation.fromValue = toValue
+        animation.toValue = fromValue
+        animation.duration = animateDuration
+        animation.repeatCount = .infinity // 无限循环
+        animation.beginTime = CACurrentMediaTime() // 设置开始延迟
+        // 将动画添加到图层
+        scrollView.layer.add(animation, forKey: "barrageAnimation")
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>A9FFA131-61A8-4919-ACA9-7176B2F2EFA4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myanimation</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myanimation</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

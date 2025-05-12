@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mycgtextaligment</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 文本居中显示 mycgtextaligment
+        let text = model.text
+        let attributes: [NSAttributedString.Key: Any] = [.font: model.font, .foregroundColor: "#000000".color]
+        
+        // 创建 NSAttributedString
+        let attributedString = NSAttributedString(string: text, attributes: attributes)
+        
+        // 计算文本尺寸
+        let textSize = attributedString.size()
+        
+        // 计算绘制文本的起始点 (使其居中)
+        let textRect = CGRect(
+            x: (size.width - textSize.width) / 2,
+            y: (size.height - textSize.height) / 2,
+            width: textSize.width,
+            height: textSize.height
+        )
+        
+        // 翻转上下文的坐标系 (因为 Core Graphics 使用的是左下角原点，而 UIKit 使用的是左上角原点)
+        context.translateBy(x: 0, y: size.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+        
+        // 创建文本绘制区域
+        let textPath = CGMutablePath()
+        textPath.addRect(textRect)
+        
+        // 创建绘制框架
+        let framesetter = CTFramesetterCreateWithAttributedString(attributedString)
+        let frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, text.count), textPath, nil)
+        
+        // 在上下文中绘制文本
+        CTFrameDraw(frame, context)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EBF9980A-CAEC-49B2-90B7-D8E90C6A6764</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>文本居中显示</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mycgtextaligment</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mymvp</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>struct Person {
+    let firstName:String
+    let lastName:String
+}
+
+protocol GreetView:AnyObject {
+    func setGeeting(greeting:String)
+}
+
+protocol GreetViewPresenter{
+    init(view:GreetView,person:Person)
+    func showGreeting()
+}
+
+class GreetingPresenter:GreetViewPresenter{
+    unowned let view:GreetView
+    let person:Person
+    required init(view: GreetView, person: Person) {
+        self.view = view
+        self.person = person
+    }
+    
+    func showGreeting() {
+        let greeting = "Hello" + " " + self.person.firstName + " " + self.person.lastName
+        self.view.setGeeting(greeting: greeting)
+    }
+}
+
+
+class MVP_VC:UIViewController{
+    
+    var showGreetingButton = UIButton()
+    var greetingLabel = UILabel()
+    
+    var presenter:GreetViewPresenter?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = .white
+        let btn = UIButton()
+        btn.frame = CGRect.init(x: 10, y: 100, width: 50, height: 50)
+        btn.backgroundColor = .red
+        btn.addTarget(self, action: #selector(didTapButton(button:)), for: .touchUpInside)
+        self.view.addSubview(btn)
+        showGreetingButton = btn
+        
+        let lb = UILabel()
+        lb.backgroundColor = .yellow
+        lb.frame = CGRect.init(x: 10, y: 200, width: 150, height: 50)
+        self.view.addSubview(lb)
+        greetingLabel = lb
+    }
+    
+    @objc func didTapButton(button:UIButton){
+        self.presenter?.showGreeting()
+    }
+   
+    
+}
+
+extension MVP_VC:GreetView{
+    func setGeeting(greeting: String) {
+        greetingLabel.text = greeting
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>72E80F4C-8E4F-4A56-8FBF-2EEA54D5DB70</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mymvp</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

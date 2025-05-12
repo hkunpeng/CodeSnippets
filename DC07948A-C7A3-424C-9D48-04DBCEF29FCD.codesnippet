@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myalert</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> let config = EHAlertConfig()
+       config.contentEdgeInset = UIEdgeInsetsMake(EHScale_Value(54), EHScale_Value(20), EHScale_Value(54),  EHScale_Value(20))
+       config.containerWidth = EHScale_Value(280)
+       config.confirmWidth   = EHScale_Value(134)
+ let v = EHAlertV(title: "Request Sent.", confirmTips:.ok,config:config,comfirmHandler: {
+           
+       })
+       v.show()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>DC07948A-C7A3-424C-9D48-04DBCEF29FCD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myalert</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myalert</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

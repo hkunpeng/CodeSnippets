@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mygraidentlayer</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>fileprivate lazy var gradientLayer: CAGradientLayer = {
+        let temp = CAGradientLayer()
+        temp.colors = [UIColor(hex: "#7759F3").cgColor, UIColor(hex: "#D463FE").cgColor]
+        temp.locations = [0, 1]
+        temp.startPoint = CGPoint.init(x: 0.0, y: 0.5)
+        temp.endPoint = CGPoint.init(x: 1.0, y: 0.5)
+        return temp
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D8D78935-C20F-479C-B0BD-3E21876B8151</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mygraidentlayer</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mygraidentlayer</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>storyboard</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>if let vc = &lt;#控制器#&gt;.load(fromStoryBoard: "&lt;#storyboard#&gt;", identifier: "&lt;#控制器#&gt;") {
+                            self.navigationController!.pushViewController(vc, animated: true)
+                        }else {
+                            log.info("create &lt;#控制器#&gt; from storyboard fail")
+                            return
+                        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>85445D9A-BFF9-4746-8B6B-D673F4F27C01</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>storyboard create controller</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

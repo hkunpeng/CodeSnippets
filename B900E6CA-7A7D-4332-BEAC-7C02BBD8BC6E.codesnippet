@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myNotifi</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NotificationCenter.default.post(name: .kNotifi_PregnancyTipsTTCSwitchGetSuccess, object: nil)
+                /// 获取切换到TTC的提示成功
+                static let kNotifi_PregnancyTipsTTCSwitchGetSuccess = Notification.Name(rawValue:"pregnancyTipsTTCSwitchGetSuccess")</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B900E6CA-7A7D-4332-BEAC-7C02BBD8BC6E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myNotifi</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myNotifi</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

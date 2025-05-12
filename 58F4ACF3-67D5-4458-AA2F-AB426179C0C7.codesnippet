@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myRxDelegatePrxoy</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/*
+ let my = MyClass()
+ 
+ my.rx.optionalImp.subscribe { (event) in
+     print("optionalImp:\(event)")
+ }.disposed(by: disposeBag)
+ my.rx.mustImp.subscribe { event in
+     print("mustImp:\(event)")
+ }.disposed(by: disposeBag)
+ my.start()
+*/
+
+//代理
+@objc public protocol MyDelegate{
+    func mustImp(_ num:Int)
+    @objc optional func optionalImp(_ num: Int)
+}
+
+///Rx代理的代理
+class RxMyDelegateProxy:DelegateProxy&lt;MyClass,MyDelegate&gt;,DelegateProxyType,MyDelegate{
+    
+    static func registerKnownImplementations() {
+        self.register { RxMyDelegateProxy(cls: $0) }
+    }
+    
+    static func currentDelegate(for object: MyClass) -&gt; MyDelegate? {
+       return object.delegate
+    }
+    
+    static func setCurrentDelegate(_ delegate: MyDelegate?, to object: MyClass) {
+        object.delegate = delegate
+    }
+    
+    override func setForwardToDelegate(_ delegate: DelegateProxy&lt;MyClass, MyDelegate&gt;.Delegate?, retainDelegate: Bool) {
+        super.setForwardToDelegate(delegate, retainDelegate: true)
+    }
+    
+    init(cls: MyClass) {
+        super.init(parentObject: cls, delegateProxy: RxMyDelegateProxy.self)
+    }
+    
+    
+    internal lazy var nums = PublishSubject&lt;Int&gt;()
+    func mustImp(_ num:Int) {
+        _forwardToDelegate?.mustImp(num)
+        nums.onNext(num)
+    }
+    
+    deinit{
+        self.nums.onCompleted()
+    }
+    
+
+}
+
+extension Reactive where Base : MyClass {
+    
+    var delegate: DelegateProxy&lt;MyClass,MyDelegate&gt;{
+        return RxMyDelegateProxy.proxy(for: base)
+    }
+    
+    var optionalImp:Observable&lt;Int&gt; {
+        return delegate.methodInvoked(#selector(MyDelegate.optionalImp(_:))).map {
+            return $0[0] as! Int
+        }
+    }
+    
+    var mustImp:Observable&lt;Int&gt; {
+        return RxMyDelegateProxy.proxy(for: base).nums.asObservable()
+    }
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>58F4ACF3-67D5-4458-AA2F-AB426179C0C7</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Rxswift代理的代理</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myRxDelegatePrxoy Rxswift代理的代理</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

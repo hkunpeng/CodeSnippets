@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myFormatter</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let dateStr = date.string(withFormatter: .yyyyMMdd)
+        if dateStr == "2022-03-02" {
+            log.debug("这天就是\(date)")
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C4BEB5B3-9A47-4CAE-9A1E-630256FA10FB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>dateStr == "2022-03-02"</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>判断日期是否相等 dateStr == "2022-03-02"</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mycontext</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+
+        // 矩形路径绘制
+        context.saveGState()
+        let path = CGMutablePath()
+        path.move(to: CGPoint.init(x: 20, y: 20))
+        path.addLine(to: CGPoint.init(x: rect.width - 20, y: 20))
+        path.addLine(to: CGPoint.init(x: rect.width - 20, y: rect.height - 20))
+        path.addLine(to: CGPoint.init(x: 20, y: rect.height - 20))
+        path.addLine(to: CGPoint.init(x: 20, y: 20))
+        path.closeSubpath()
+        context.restoreGState()
+        
+        // 绘制阴影
+        context.saveGState()
+        context.addRect(path.boundingBox)
+        context.setShadow(offset: CGSize(width: 2, height: 2), blur: 10, color: UIColor.yellow.withAlphaComponent(0.5).cgColor)
+        context.drawPath(using: .fill)
+        context.restoreGState()
+        
+        // 填充区域
+        context.saveGState()
+        context.beginPath()
+        context.addPath(path)
+        context.setFillColor(UIColor.green.cgColor)
+        context.setAlpha(1)
+        context.fillPath()
+        context.restoreGState()
+        
+        // 画边框
+        context.saveGState()
+        context.beginPath()
+        context.addPath(path)
+        context.setLineWidth(2)
+        context.setStrokeColor(UIColor.red.cgColor)
+        context.strokePath()
+        context.restoreGState()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0B2BB13C-3A8A-4780-887B-DED7B362F277</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mycontext</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mycontext</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myAttribute</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>fileprivate lazy var lbTitle: UILabel = {
+        let temp = UILabel()
+        temp.attributedText = EHUtility.createString(text: "".localized, textColor: "#383838".color, font: .systemFont(ofSize: 16, weight: .regular),alignment: .center)
+        temp.numberOfLines = 0
+        temp.adjustsFontSizeToFitWidth = true
+        return temp
+    }()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ECD96061-FBBD-41E0-AA12-0AEF4A83D57C</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myAttributeString</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>创建属性文本</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

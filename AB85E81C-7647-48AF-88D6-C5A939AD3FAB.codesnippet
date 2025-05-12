@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myhittest1</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string> override func point(inside point: CGPoint, with event: UIEvent?) -&gt; Bool {
+        // 获取当前视图的 frame
+        var presentingRect = self.frame
+        
+        // 如果存在动画（即有显示层），则获取显示层的 frame
+        if let presentationLayer = self.layer.presentation() {
+            presentingRect = presentationLayer.frame
+        }
+        
+        // 将点击的点从当前视图的坐标系转换到父视图的坐标系
+        let superPoint = self.convert(point, to: self.superview)
+        
+        // 判断点击的点是否在显示层的 frame 内
+        let isInside = presentingRect.contains(superPoint)
+        
+        return isInside
+    }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -&gt; UIView? {
+        // 获取当前视图的所有子视图
+        let subViews = self.subviews
+        
+        // 遍历子视图
+        for subView in subViews {
+            // 判断子视图是否为目标类型 FoamImageView
+            if subView is EHMarqueeItemView&lt;T&gt; {
+                // 获取子视图的显示层
+                if let layer = subView.layer.presentation() {
+                    // 判断触摸点是否在显示层的 frame 内
+                    if layer.frame.contains(point) {
+                        // 如果是，返回这个子视图
+                        return subView
+                    }
+                }
+            }
+        }
+        
+        // 如果没有找到符合条件的子视图，返回父类的 hitTest 结果
+        return super.hitTest(point, with: event)
+    }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AB85E81C-7647-48AF-88D6-C5A939AD3FAB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myhittest1</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myhittest1</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

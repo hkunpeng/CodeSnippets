@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>requestcode</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>HUD.hide()
+if error != nil {
+    log.info(error ?? "getDoctorList error!")
+    return;
+}
+let resCode = response["code"].intValue
+switch resCode {
+case.success:
+    log.info("response====\(response)")
+case .needRelogin:
+    
+    log.info("需要重新登录error.code====\(resCode)")
+    EHLoginModel.current?.fetchNewAuthToken(completion: { (succeed, _) in
+        if succeed {
+            self.getDoctorListApi()
+        }
+    })
+    
+default:
+    break
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>553DBF6A-1E2B-4CE6-BEDD-6639D0317268</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>请求回调代码</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

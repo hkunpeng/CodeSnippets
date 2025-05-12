@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mynavigationbar</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>var config = EHNaviBarConfig.init(title: "Title4")
+        config.showLeftBtn1 = true
+        config.showLeftBtn2 = true
+        config.showRightBtn1 = true
+        config.showRightBtn2 = true
+        config.leftImage1 = "nav_ic_back_black".image
+        config.leftImage2 = "nav_ic_profile_black".image
+        config.rightImage1 = "nav_ic_key_black".image
+        config.rightImage2 = "nav_ic_more_black".image
+        config.clickLeftBtn1 = {
+            print("点击clickLeftBtn1")
+        }
+        config.clickLeftBtn2 = {
+            print("点击clickLeftBtn2")
+        }
+        config.clickRightBtn1 = {
+            print("点击clickRightBtn1")
+        }
+        config.clickRightBtn2 = {
+            print("点击clickRightBtn2")
+        }
+        let v = EHNavigationBar(config: config)
+        self.view.addSubview(v)
+        v.snp.makeConstraints { make in
+            make.leading.top.trailing.equalTo(0)
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>F0034AB5-2653-470B-BA99-294951DC3C04</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mynavigationbar</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

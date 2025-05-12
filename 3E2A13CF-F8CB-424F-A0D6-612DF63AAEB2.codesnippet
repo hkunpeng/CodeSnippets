@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myh5</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>let vc = EHBaseWebViewController()
+        vc.url = "http://10.0.5.108:3000/app/webview/share-story/chart-new".addEHCommonParameter
+        self.navigationController?.pushViewController(vc, animated: true)</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>3E2A13CF-F8CB-424F-A0D6-612DF63AAEB2</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>myh5</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>myh5</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
