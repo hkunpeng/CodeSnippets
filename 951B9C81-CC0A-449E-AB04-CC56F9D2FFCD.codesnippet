@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mykeyboardwillshow</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@objc private func keyboardWillShow(_ notification: Notification) {
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+        guard let animationTime = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+        let keyboardHeight = keyboardFrame.height
+        
+        UIView.animate(withDuration: animationTime) {
+            self.stackView.snp.updateConstraints { make in
+                make.bottom.equalTo(-keyboardHeight)
+            }
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        // Restore original position
+        guard let animationTime = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+        UIView.animate(withDuration: animationTime) {
+            self.stackView.snp.updateConstraints { make in
+                make.bottom.equalTo(-kBottomHeight-20)
+            }
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc fileprivate func onAccessoryDone(){
+        self.view.endEditing(true)
+    }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>951B9C81-CC0A-449E-AB04-CC56F9D2FFCD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>mykeyboardwillshow</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>mykeyboardwillshow</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
